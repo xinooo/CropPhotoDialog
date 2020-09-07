@@ -28,8 +28,6 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView icon,icon2;
-    private Bitmap bitmap;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,13 +60,7 @@ public class MainActivity extends AppCompatActivity {
 
                     @Override
                     public void onOk(CropPhotoDialog dialog, String path) {
-                        bitmap = BitmapFactory.decodeFile(path);
-                        icon2.setImageBitmap(bitmap);
-                        if(bitmap != null && !bitmap.isRecycled()){
-                            bitmap.recycle();
-                            bitmap = null;
-                        }
-                        System.gc();
+                        icon2.setImageBitmap( BitmapFactory.decodeFile(path));
                     }
                 });
                 cropPhotoDialog.show();
@@ -94,13 +86,7 @@ public class MainActivity extends AppCompatActivity {
 
                         @Override
                         public void onOk(CropPhotoDialog dialog, String path) {
-                            bitmap = BitmapFactory.decodeFile(path);
-                            icon.setImageBitmap(bitmap);
-                            if(bitmap != null && !bitmap.isRecycled()){
-                                bitmap.recycle();
-                                bitmap = null;
-                            }
-                            System.gc();
+                            icon.setImageBitmap(BitmapFactory.decodeFile(path));
                         }
                     });
                     cropPhotoDialog.show();

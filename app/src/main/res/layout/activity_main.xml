@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/icon_bg"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="相册图片裁剪"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/icon_bg"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_selecticon_bg"/>
+
+        <ImageView
+            android:id="@+id/icon"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:background="@drawable/select_icon_bg"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_weight="1"
+        android:layout_marginLeft="10dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/icon_bg2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:text="Bitmap裁剪"
+            android:textSize="20sp" />
+
+        <ImageView
+            android:id="@+id/icon_bg2"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/ic_selecticon_bg"/>
+
+        <ImageView
+            android:id="@+id/icon2"
+            android:layout_width="190dp"
+            android:layout_height="190dp"
+            android:background="@drawable/select_icon_bg"
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

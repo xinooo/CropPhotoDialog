@@ -28,6 +28,7 @@ import java.util.List;
 public class MainActivity extends AppCompatActivity {
 
     private ImageView icon,icon2;
+    private int CROP_PHOTO = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +45,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent i = new Intent(Intent.ACTION_PICK, null);
                 i.setDataAndType(MediaStore.Images.Media.EXTERNAL_CONTENT_URI, "image/*");
-                startActivityForResult(i, 0);
+                startActivityForResult(i, CROP_PHOTO);
             }
         });
 
@@ -72,13 +73,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if (resultCode == -1) {
-            if (requestCode == 0){
+            if (requestCode == CROP_PHOTO){
                 try {
                     final Uri imageUri = data.getData();
-                    Log.i("imageUri:",imageUri+"");
-                    String selectPhoto = ImageTools.getRealPathFromUri(this,imageUri);
-                    Log.i("selectPhoto:",selectPhoto);
-                    CropPhotoDialog cropPhotoDialog = new CropPhotoDialog(MainActivity.this, selectPhoto, new CropPhotoDialog.OnCropDialogListener() {
+                    String PhotoPath = ImageTools.getRealPathFromUri(this,imageUri);
+                    CropPhotoDialog cropPhotoDialog = new CropPhotoDialog(MainActivity.this, PhotoPath, new CropPhotoDialog.OnCropDialogListener() {
                         @Override
                         public void onCancel(CropPhotoDialog dialog) {
 

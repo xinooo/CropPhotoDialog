@@ -52,7 +52,7 @@ protected void onActivityResult(int requestCode, int resultCode, @Nullable Inten
  ```
  ### Crop Bitmap
  ```java
-CropPhotoDialog cropPhotoDialog = new CropPhotoDialog(MainActivity.this, itmap, new CropPhotoDialog.OnCropDialogListener() {
+CropPhotoDialog cropPhotoDialog = new CropPhotoDialog(MainActivity.this, bitmap, new CropPhotoDialog.OnCropDialogListener() {
     @Override
     public void onCancel(CropPhotoDialog dialog) {
 
@@ -60,7 +60,7 @@ CropPhotoDialog cropPhotoDialog = new CropPhotoDialog(MainActivity.this, itmap, 
 
     @Override
     public void onOk(CropPhotoDialog dialog, String path) {
-        icon2.setImageBitmap( BitmapFactory.decodeFile(path));
+        icon.setImageBitmap( BitmapFactory.decodeFile(path));
     }
 });
 cropPhotoDialog.show();  
